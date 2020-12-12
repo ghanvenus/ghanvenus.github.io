@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<title>BMI계산</title>
+<style>
+  input {
+    padding : 10px;
+    border-radius : 0 20px 0 0;
+    font-size:20pt;
+    width:100px;
+  }
+ h2, td, #outputBMI{
+    font-size:30px;
+  }
+td{
+    padding-left : 20px;
+    border-bottom:solid 1px black;
+  }
+</style>
+
+<body>
+
+<h2>BMI계산</h2>
+<table>
+  <tr><td width="100px">키</td><td>
+  <input id="inputHeight" type="number" placeholder="Height" oninput="bmi_h(this.value)" value="180" >
+</td></tr>
+<tr><td>몸무게</td><td>
+  <input id="inputWeight" type="number" placeholder="Weight" oninput="bmi_w(this.value)" value="70" >
+</td></tr><tr><td>BMI: </td><td><span id="outputBMI"></span></td></tr></table>
+
+<script>
+function bmi_h(valNum) {
+  var h_m = valNum*0.01;
+  var kg = Number(document.getElementById("inputWeight").value);
+  document.getElementById("outputBMI").innerHTML=kg/(h_m*h_m);
+}
+function bmi_w(valNum) {
+  var h_m = Number(document.getElementById("inputHeight").value)*0.01;
+  var kg = valNum;
+  document.getElementById("outputBMI").innerHTML=kg/(h_m*h_m);
+}
+</script>
+
+</body>
+</html>
