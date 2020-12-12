@@ -173,4 +173,15 @@ function handlePrevCalendar() {
     calendarBuilding(firstDate, lastDate);
 }
 
-function 
+function init() {
+    const firstDate = firstDay(0).getDay();
+    const lastDate = lastDay(0);
+    calendarBuilding(firstDate, lastDate);
+}
+function goto_thisMonth() {
+  count = 0;
+  init();
+}
+init();
+
+</script>
